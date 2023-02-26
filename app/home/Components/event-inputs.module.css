@@ -1,0 +1,40 @@
+.eventForm {
+  border: 1px solid black;
+  padding: .5rem;
+  width: 100%;
+  margin: 1rem 0;
+  font-size: 1rem;
+}
+
+.inputWrapper {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-bottom: .5rem;
+}
+
+.inputWrapper label {
+  flex: 1;
+}
+
+.inputWrapper input {
+  flex: 2;
+}
+
+.timeWrapper {
+  flex: 1;
+  display: flex;
+  justify-content: space-between;
+}
+
+.timeWrapper:first-child {
+  margin-right: .5rem;
+}
+
+.addWrapper {
+  width: 100%;
+}
+
+.addBtn {
+  width: 100%;
+}

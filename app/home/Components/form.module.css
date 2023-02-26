@@ -1,0 +1,36 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.main {
+  border: 1px solid black;
+  padding: .5rem;
+  padding-bottom: 0;
+  width: 100%;
+  margin-bottom: 1rem;
+  font-size: 1rem;
+}
+
+.inputWrapper {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-bottom: .5rem;
+}
+
+.inputWrapper label {
+  flex: 1;
+}
+
+.inputWrapper input {
+  flex: 2;
+}
+
+.addWrapper {
+  width: 100%;
+}
+
+.addBtn {
+  width: 100%;
+}

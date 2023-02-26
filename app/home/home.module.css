@@ -1,0 +1,10 @@
+@font-face {
+  font-family: Kanit;
+  src: url(../../assets/fonts/Kanit-Regular.ttf);
+}
+
+.home {
+  background-color: #FFFFFF;
+  padding: .5rem .5rem;
+  font-family: Kanit;
+}

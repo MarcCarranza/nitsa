@@ -1,0 +1,32 @@
+@font-face {
+  font-family: Nitsa;
+  src: url(../../../assets/fonts/cool9bit.TTF);
+}
+
+.poster {
+  font-family: Nitsa;
+}
+
+.bgGrid {
+  margin-top: 1rem;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: repeat(6, 1fr);
+  background-color: #CCC;
+  height: 500px;
+  width: 100%;
+}
+
+.gridCell {
+  position: relative;
+  height: 100%;
+  width: 100%;
+}
+
+.gridCellContent {
+  height: 100%;
+  left: 0;
+  top: 0;
+  background-color: palevioletred;
+  position: absolute;
+}
