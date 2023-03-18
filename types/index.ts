@@ -1,11 +1,13 @@
 export type EventData = {
-  day: string
-  times: {
-    start: string | null
-    end: string | null
-  }
-  place: string
-  name: string
-}
+  day: string;
+  place: string;
+  name: string;
+  artists: string[];
+};
 
-export type BgOptions = Record<string, boolean>
+export type BgOptions = Record<string, boolean>;
+
+export type Option = {
+  label: string;
+  value: number;
+};

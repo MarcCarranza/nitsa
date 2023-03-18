@@ -1,12 +1,12 @@
 'use client'
 
-import { ReactElement, useState } from 'react'
+import { ChangeEvent, ReactElement, useState } from 'react'
 
 // Components
 import EventInputs from './EventInputs'
 
 // Types
-import { EventData } from '../../../types'
+import { EventData, Option } from '../../../types'
 
 // Styles
 import styles from './form.module.css'
@@ -20,6 +20,12 @@ type Props = {
   updateData: Function
 }
 
+const BG_TYPES: Option[] = [
+  { label: "Rectangular", value: 0 },
+  { label: "Round", value: 1 },
+  { label: "Path", value: 2 }
+]
+
 export default function Form({
   month,
   logo,
@@ -32,14 +38,17 @@ export default function Form({
   const [isOpen, setOpen] = useState(false)
 
   // Handlers
-  const onChangeMonth = (month): void => {
-    console.log(month)
-    // updateMonth()
+  const onChangeMonth = (e: ChangeEvent<HTMLInputElement>): void => {
+    updateMonth(e.currentTarget.value)
   }
 
-  const onUploadLogo = (logo): void => {
-    console.log(logo)
-    // updateLogo()
+  const onUploadLogo = (e: ChangeEvent<HTMLInputElement>): void => {
+    updateLogo(URL.createObjectURL(e.currentTarget.files[0]))
+  }
+
+  const onAddEvent = (event): void => {
+    updateData(event)
+    setOpen(false)
   }
 
   return (
@@ -53,6 +62,14 @@ export default function Form({
           <label>Logo</label>
           <input type="file" onChange={onUploadLogo} />
         </div>
+        <div className={'test'}>
+          <label>Fons</label>
+          <select onChange={(e) => console.log(e.currentTarget.value)}>
+            {BG_TYPES.map((option: Option) => {
+              return <option value={option.value}>{option.value}</option>
+            })}
+          </select>
+        </div>
       </div>
       <div className={styles.addWrapper}>
         <button
@@ -63,7 +80,7 @@ export default function Form({
           Afegir
         </button>
       </div>
-      {isOpen && <EventInputs updateData={(updatedData) => updateData(updatedData)} />}
+      {isOpen && <EventInputs updateData={onAddEvent} />}
     </div>
   )
 }
